@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="flipTimer.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery.flipTimer.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Count Down</title>
+  </head>
+  <body>
+    <h1>Countdown to April 20th, 2024⏲️❤️</h1>
+    <div>
+      <div class="flipTimer">
+        <div class="days"></div>
+        <span class="label">Days</span>
+        <div class="hours"></div>
+        <span class="label">Hours</span>
+        <div class="minutes"></div>
+        <span class="label">Minutes</span>
+        <div class="seconds"></div>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".flipTimer").flipTimer({
+        // count up or countdown
+
+        direction: "down",
+
+        // the target <a href="https://www.jqueryscript.net/time-clock/">date</a>
+
+        date: "April 20, 2024 08:30:30",
+
+        // callback works only with direction = "down"
+
+        callback: function () {
+          alert("times up!");
+        },
+      });
+    });
+  </script>
+</html>
